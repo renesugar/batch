@@ -36,7 +36,13 @@ defmodule BatchTest do
   end
 
   test "can be supervised directly" do
-    assert {:ok, _} = Supervisor.start_link([{Batch, [fn -> :ok end]}], strategy: :one_for_one)
+    import Supervisor.Spec
+
+    children = [
+      worker(Batch, [[[fn -> :ok end]]])
+    ]
+
+    assert {:ok, _} = Supervisor.start_link(children, strategy: :one_for_one)
   end
 
   test "generates child_spec/1" do
