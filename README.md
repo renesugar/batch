@@ -11,7 +11,7 @@ Add `batch` to your project's dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:batch, "~> 0.1"}]
+  [{:batch, "~> 0.2"}]
 end
 ```
 
