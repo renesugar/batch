@@ -12,7 +12,7 @@ defmodule Batch.Mixfile do
       elixirc_paths: elixirc_paths(Mix.env),
       deps: deps(),
       package: package(),
-      preferred_cli_env: [docs: :docs, inch: :docs],
+      preferred_cli_env: [docs: :docs],
       description: description(),
       docs: docs(),
       test_coverage: [tool: Batch.Cover, ignore_modules: [Batch.Supervisor]]
@@ -32,8 +32,7 @@ defmodule Batch.Mixfile do
   defp deps do
     [
       {:credo, "~> 0.8.10", only: :dev},
-      {:ex_doc, "~> 0.18.1", only: :docs},
-      {:inch_ex, ">= 0.0.0", only: :docs}
+      {:ex_doc, "~> 0.18.1", only: :docs}
     ]
   end
 
